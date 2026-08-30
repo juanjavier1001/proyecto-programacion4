@@ -155,6 +155,79 @@ main {
     background-color: var(--color-accent-hover);
 }
 
+/* ===== SECCIONES GENERALES ===== */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) var(--spacing-xl);
+}
+
+.section-container h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text);
+}
+
+/* ===== SECTION: NOSOTROS ===== */
+#nosotros {
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+#nosotros p {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    max-width: 720px;
+    margin-bottom: var(--spacing-md);
+}
+
+/* ===== SECTION: SERVICIOS ===== */
+#servicios {
+    background-color: var(--color-background);
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.servicio-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    transition: border-color var(--transition);
+}
+
+.servicio-card:hover {
+    border-color: var(--color-accent);
+}
+
+.servicio-card h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
+}
+
+.servicio-card p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    line-height: 1.65;
+}
+
+/* ===== SECTION: CONTACTO ===== */
+#contacto {
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    min-height: 200px;
+}
+
 /* ===== FOOTER ===== */
 footer {
     background-color: var(--color-surface);
@@ -186,7 +259,17 @@ footer p {
         font-size: 1.75rem;
     }
 
-    #informacion {
+    .section-container {
         padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .servicios-grid {
+        grid-template-columns: 1fr;
     }
 }
