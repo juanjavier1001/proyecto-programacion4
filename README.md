@@ -24,6 +24,16 @@ proyecto-programacion4/
 - *Servicios* — listado de funcionalidades del sistema
 - *Contacto* — (pendiente de completar)
 
+## SEO
+
+El sitio incluye optimización básica para motores de búsqueda mediante meta tags en `index.html`:
+
+- *Meta description* — resumen del sistema para resultados de búsqueda
+- *Meta keywords* — palabras clave relacionadas (taller mecánico, gestión de taller, turnos, órdenes de trabajo, vehículos, clientes, reparaciones)
+- *Meta author* — autoría del proyecto
+- *Meta robots* — `index, follow` para permitir el rastreo e indexación por buscadores
+- *Título optimizado* — `TallerPro — Sistema de Gestión para Talleres Mecánicos`
+
 ## Equipo
 
 - Juan Javier Cordero
