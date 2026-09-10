@@ -213,7 +213,7 @@ main {
     border-color: var(--color-accent-hover);
 }
 
-/* ===== SECCIONES GENERALES ===== */
+/* ===== SECCIONES GENERALES — TP ANTERIOR (conservado) =====
 .section-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -226,6 +226,7 @@ main {
     margin-bottom: var(--spacing-lg);
     color: var(--color-text);
 }
+===== FIN TP ANTERIOR ===== */
 
 /* ===== SECTION: NOSOTROS — TP ANTERIOR =====
 #nosotros {
@@ -255,7 +256,16 @@ main {
     line-height: 1.75;
 }
 
-/* ===== SECTION: SERVICIOS ===== */
+/* ===== SECTION: SERVICIOS — TP ANTERIOR (conservado) =====
+#servicios {
+    background-color: var(--color-background);
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+/* ===== SECTION: SERVICIOS — TP ANTERIOR (conservado) =====
 #servicios {
     background-color: var(--color-background);
 }
@@ -291,8 +301,33 @@ main {
     color: var(--color-text-muted);
     line-height: 1.65;
 }
+===== FIN TP ANTERIOR ===== */
 
-/* ===== SECTION: CONTACTO ===== */
+/* ===== SECTION: SERVICIOS — Bootstrap overrides ===== */
+#servicios {
+    background-color: var(--color-background);
+}
+
+.servicio-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    transition: border-color var(--transition);
+}
+
+.servicio-card:hover {
+    border-color: var(--color-accent);
+}
+
+.servicio-card .card-title {
+    color: var(--color-text);
+}
+
+.servicio-card .card-text {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+}
+
+/* ===== SECTION: CONTACTO — TP ANTERIOR (conservado) =====
 #contacto {
     background-color: var(--color-surface);
     border-top: 1px solid var(--color-border);
@@ -376,6 +411,46 @@ main {
         grid-template-columns: 1fr;
     }
 }
+===== FIN TP ANTERIOR ===== */
+
+/* ===== SECTION: CONTACTO — Bootstrap overrides ===== */
+#contacto {
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+}
+
+#contacto .form-control {
+    background-color: var(--color-surface-alt);
+    border-color: var(--color-border);
+    color: var(--color-text);
+}
+
+#contacto .form-control::placeholder {
+    color: var(--color-text-muted);
+}
+
+#contacto .form-control:focus {
+    background-color: var(--color-surface-alt);
+    border-color: var(--color-accent);
+    color: var(--color-text);
+    box-shadow: 0 0 0 0.2rem rgba(192, 57, 43, 0.25);
+}
+
+#contacto .form-label {
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+#contacto .btn-danger {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+#contacto .btn-danger:hover {
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+}
 
 /* ===== FOOTER — TP ANTERIOR =====
 footer {
@@ -424,6 +499,7 @@ footer {
 }
 */
 
+/* .servicios-grid responsive — TP ANTERIOR (reemplazado por Bootstrap row-cols-*)
 @media (max-width: 768px) {
     .section-container {
         padding: var(--spacing-xl) var(--spacing-md);
@@ -439,3 +515,4 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+*/

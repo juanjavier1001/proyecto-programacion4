@@ -72,69 +72,86 @@
             </div>
         </section>
 
-        <section id="servicios">
-            <div class="section-container">
-                <h2>Servicios</h2>
-                <div class="servicios-grid">
-                    <div class="servicio-card">
-                        <h3>Gestión de Clientes</h3>
-                        <p>Registrá y administrá la información de tus clientes y su historial de visitas al
-                            taller.</p>
+       <section id="servicios">
+            <div class="container py-5">
+                <h2 class="fw-bold mb-4">Servicios</h2>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100 servicio-card">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Gestión de Clientes</h3>
+                                <p class="card-text">Registrá y administrá la información de tus clientes y su historial de visitas al taller.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="servicio-card">
-                        <h3>Control de Vehículos</h3>
-                        <p>Asociá cada vehículo a su propietario y llevá un registro completo de intervenciones
-                            y reparaciones.</p>
+                    <div class="col">
+                        <div class="card h-100 servicio-card">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Control de Vehículos</h3>
+                                <p class="card-text">Asociá cada vehículo a su propietario y llevá un registro completo de intervenciones y reparaciones.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="servicio-card">
-                        <h3>Gestión de Turnos</h3>
-                        <p>Organizá la agenda del taller, asignando turnos a mecánicos y evitando
-                            superposiciones.</p>
+                    <div class="col">
+                        <div class="card h-100 servicio-card">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Gestión de Turnos</h3>
+                                <p class="card-text">Organizá la agenda del taller, asignando turnos a mecánicos y evitando superposiciones.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="servicio-card">
-                        <h3>Órdenes de Trabajo</h3>
-                        <p>Creá y seguí el estado de cada orden, desde el diagnóstico hasta la entrega del
-                            vehículo.</p>
+                    <div class="col">
+                        <div class="card h-100 servicio-card">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Órdenes de Trabajo</h3>
+                                <p class="card-text">Creá y seguí el estado de cada orde la entrega del vehículo.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="servicio-card">
-                        <h3>Presupuestos</h3>
-                        <p>Generá presupuestos detallados con repuestos y mano de obra para presentar al
-                            cliente.</p>
+                    <div class="col">
+                        <div class="card h-100 servicio-card">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Presupuestos</h3>
+                                <p class="card-text">Generá presupuestos detallados con repuestos y mano de obra para presentar al cliente.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="servicio-card">
-                        <h3>Historial y Reportes</h3>
-                        <p>Accedé al historial completo de reparaciones y generá reportes para tomar mejores
-                            decisiones.</p>
+                    <div class="col">
+                        <div class="card h-100 servicio-card">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Historial y Reportes</h3>
+                                <p class="card-text">Accedé al historial completo de repara tomar mejores decisiones.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contacto">
-            <div class="section-container">
-                <h2>Contacto</h2>
-                <p class="contacto-intro">¿Tenés preguntas sobre TallerPro? Completá el formulario y te respondemos a la
-                    brevedad.</p>
-                <form class="contacto-form" action="#" method="post">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+       <section id="contacto">
+            <div class="container py-5">
+                <h2 class="fw-bold mb-2">Contacto</h2>
+                <p class="mb-4" style="color: var(--color-text-muted);">¿Tenés preguntas sobre TallerPro? Completá el formulario y te respondemos a la brevedad.</p>
+                <form action="#" method="post" class="col-12 col-md-8 col-lg-6">
+                    <div class="row g-3 mb-3">
+                        <div class="col-12 col-sm-6">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                        <div class="col-12 col-sm-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="tu@email.com" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="asunto">Asunto</label>
-                        <input type="text" id="asunto" name="asunto" placeholder="¿En qué podemos ayudarte?" required>
+                    <div class="mb-3">
+                        <label for="asunto" class="form-label">Asunto</label>
+                        <input type="text" class="form-control" id="asunto" name="asunto" placeholder="¿En qué podemos ayudarte?" required>
                     </div>
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name=r="Escribí tu mensaje acá..." required></textarea>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje acá..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                    <button type="submit" class="btn btn-danger fw-semibold">Enviar mensaje</button>
                 </form>
             </div>
         </section>
