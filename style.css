@@ -58,7 +58,7 @@ ul {
     list-style: none;
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER — TP ANTERIOR =====
 header {
     position: fixed;
     top: 0;
@@ -104,6 +104,41 @@ nav {
 
 .nav-links a:hover {
     color: var(--color-text);
+}
+===== FIN TP ANTERIOR ===== */
+
+/* ===== HEADER — Bootstrap overrides ===== */
+.navbar-tallerpro {
+    background-color: var(--color-surface) !important;
+    border-bottom: 1px solid var(--color-border);
+    min-height: 60px;
+}
+
+.navbar-tallerpro .navbar-brand {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text) !important;
+    letter-spacing: 0.3px;
+}
+
+.navbar-tallerpro .nav-link {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text-muted) !important;
+    transition: color var(--transition);
+}
+
+.navbar-tallerpro .nav-link:hover,
+.navbar-tallerpro .nav-link:focus {
+    color: var(--color-text) !important;
+}
+
+.navbar-tallerpro .navbar-toggler {
+    border-color: var(--color-border);
+}
+
+.navbar-tallerpro .navbar-toggler-icon {
+    filter: brightness(0.8);
 }
 
 /* ===== MAIN ===== */
@@ -306,7 +341,7 @@ main {
     }
 }
 
-/* ===== FOOTER ===== */
+/* ===== FOOTER — TP ANTERIOR =====
 footer {
     background-color: var(--color-surface);
     border-top: 1px solid var(--color-border);
@@ -318,8 +353,18 @@ footer p {
     font-size: var(--font-size-sm);
     color: var(--color-text-muted);
 }
+===== FIN TP ANTERIOR ===== */
+
+/* ===== FOOTER — Bootstrap overrides ===== */
+footer {
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+}
 
 /* ===== RESPONSIVE ===== */
+
+/* Navbar — TP ANTERIOR (reemplazado por Bootstrap navbar-expand-lg)
 @media (max-width: 768px) {
     nav {
         padding: 0 var(--spacing-md);
@@ -328,7 +373,10 @@ footer p {
     .nav-links {
         gap: var(--spacing-lg);
     }
+}
+*/
 
+@media (max-width: 768px) {
     #inicio {
         padding: var(--spacing-xl) var(--spacing-md);
     }
