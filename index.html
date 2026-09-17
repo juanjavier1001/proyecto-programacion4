@@ -4,14 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="TallerPro es un sistema de gestión para talleres mecánicos. Administrá clientes, vehículos, turnos y órdenes de trabajo desde un solo lugar.">
-    <meta name="keywords"
-        content="taller mecánico, gestión de taller, turnos, órdenes de trabajo, vehículos, clientes, reparaciones, mecánico">
-    <meta name="author" content="Juan Javier Cordero, Lucas Cordero , Valdez Leandro">
+    <meta name="description" content="TallerNet es el sistema de gestión de inventario para redes de talleres mecánicos. Centralizá el stock de repuestos por sucursal, consultá disponibilidad en tiempo real y registrá transferencias entre sucursales.">
+    <meta name="keywords" content="sistema de gestión de talleres, inventario por sucursal, red de talleres mecánicos, transferencias de repuestos, stock centralizado">
+    <meta name="author" content="Juan Javier Cordero, Lucas Cordero, Leandro Valdez">
     <meta name="robots" content="index, follow">
-    <title>TallerPro — Sistema de Gestión para Talleres Mecánicos</title>
-    <!-- Bootstrap 5 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%233b82f6'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='800' font-size='14' fill='white'>TN</text></svg>">
+    <title>TallerNet — Sistema de gestión de inventario para redes de talleres</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,19 +17,25 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top navbar-tallerpro" data-bs-theme="dark">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="#">TallerPro</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-tn" data-bs-theme="dark">
+            <div class="container-xl">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#" aria-label="TallerNet — Inicio">
+                    <span class="brand-mark" aria-hidden="true">TN</span>
+                    TallerNet
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav"
+                    aria-expanded="false" aria-label="Abrir menú">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto gap-2">
-                        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+                        <li class="nav-item"><a class="nav-link" href="#plataforma">Plataforma</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#funcionalidades">Funcionalidades</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                        <li class="nav-item mt-2 mt-lg-0 ms-lg-3">
+                            <a class="btn btn-primary btn-sm px-4" href="#contacto">Solicitar demo</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -39,133 +43,349 @@
     </header>
 
     <main>
+
+        <!-- ========== HERO ========== -->
         <section id="inicio">
-            <div class="container">
-                <div class="row align-items-center inicio-hero">
-                    <div class="col-12 col-md-8 col-lg-7">
-                        <h1 class="display-4 fw-bold mb-3">Bienvenido a TallerPro</h1>
-                        <p class="lead mb-4">Sistema de gestión para talleres mecánicos. Organizá clientes, vehículos,
-                            turnos y órdenes de trabajo desde un solo lugar.</p>
-                        <a href="#nosotros" class="btn btn-danger btn-lg fw-semibold">Conocer más</a>
+            <div class="container-xl">
+                <div class="row align-items-center g-5">
+                    <div class="col-12 col-lg-5">
+                        <p class="section-label mb-3">Para redes de talleres mecánicos</p>
+                        <h1 class="display-5 fw-bold mb-4">Conectá el inventario de toda tu red de talleres</h1>
+                        <p class="lead mb-5">TallerNet centraliza el stock de repuestos por sucursal, te muestra qué hay disponible en toda la red y registra transferencias de manera ordenada.</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#contacto" class="btn btn-primary btn-lg fw-semibold">Solicitar demo</a>
+                            <a href="#funcionalidades" class="btn btn-outline-light btn-lg">Ver funcionalidades</a>
+                        </div>
+                    </div>
+                    <!-- Dashboard mockup — decorativo, oculto en mobile -->
+                    <div class="col-12 col-lg-7 d-none d-lg-block" aria-hidden="true">
+                        <div class="dashboard-mockup" role="presentation">
+                            <div class="mockup-chrome">
+                                <div class="chrome-dots">
+                                    <span class="chrome-dot chrome-dot--red"></span>
+                                    <span class="chrome-dot chrome-dot--yellow"></span>
+                                    <span class="chrome-dot chrome-dot--green"></span>
+                                </div>
+                                <div class="chrome-url">app.tallernet.io</div>
+                            </div>
+                            <div class="mockup-app">
+                                <aside class="mockup-sidebar">
+                                    <div class="mockup-brand-mark">TN</div>
+                                    <div class="mockup-nav active">Inventario</div>
+                                    <div class="mockup-nav">Sucursales</div>
+                                    <div class="mockup-nav">Transferencias</div>
+                                    <div class="mockup-nav">Reportes</div>
+                                    <div class="mockup-nav">Usuarios</div>
+                                </aside>
+                                <div class="mockup-main">
+                                    <div class="mockup-topbar">
+                                        <span class="mockup-page-title">Stock General</span>
+                                        <span class="mockup-branch-badge">Suc. Centro ▾</span>
+                                    </div>
+                                    <div class="mockup-kpis">
+                                        <div class="kpi">
+                                            <div class="kpi-val">247</div>
+                                            <div class="kpi-label">Repuestos</div>
+                                        </div>
+                                        <div class="kpi">
+                                            <div class="kpi-val kpi-val--warn">12</div>
+                                            <div class="kpi-label">Stock bajo</div>
+                                        </div>
+                                        <div class="kpi">
+                                            <div class="kpi-val kpi-val--info">4</div>
+                                            <div class="kpi-label">Transferencias</div>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-table-hd">
+                                        <span>Repuesto</span>
+                                        <span>Cant.</span>
+                                        <span>Estado</span>
+                                    </div>
+                                    <div class="mockup-row">
+                                        <span class="row-name">Filtro de aceite Bosch</span>
+                                        <span class="row-qty">42</span>
+                                        <span class="row-status status-ok">OK</span>
+                                    </div>
+                                    <div class="mockup-row">
+                                        <span class="row-name">Pastilla de freno</span>
+                                        <span class="row-qty">3</span>
+                                        <span class="row-status status-low">Bajo</span>
+                                    </div>
+                                    <div class="mockup-row mockup-row--hl">
+                                        <span class="row-name">Bujías NGK</span>
+                                        <span class="row-qty">18</span>
+                                        <span class="row-status status-ok">OK</span>
+                                    </div>
+                                    <div class="mockup-row">
+                                        <span class="row-name">Correa dentada</span>
+                                        <span class="row-qty">0</span>
+                                        <span class="row-status status-out">Sin stock</span>
+                                    </div>
+                                    <div class="mockup-footer">
+                                        <button class="mockup-cta" tabindex="-1">+ Solicitar transferencia</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="nosotros">
-            <div class="container py-5">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="fw-bold mb-4">Nosotros</h2>
+        <!-- ========== PLATAFORMA ========== -->
+        <section id="plataforma">
+            <div class="container-xl">
+                <div class="row mb-5">
+                    <div class="col-12 col-lg-8">
+                        <p class="section-label mb-2">Plataforma</p>
+                        <h2 class="fw-bold mb-3">El problema del inventario aislado por sucursal</h2>
+                        <p class="section-desc">Sin una plataforma centralizada, cada sucursal maneja su stock de forma independiente. El resultado: compras duplicadas, demoras en reparaciones y nula visibilidad del inventario real de la red.</p>
                     </div>
-                    <div class="col-12 col-md-10 col-lg-8">
-                        <p class="mb-3">TallerPro es un sistema desarrollado para simplificar la administración de
-                            talleres mecánicos.
-                            Nació como respuesta a la necesidad de centralizar la información de clientes, vehículos y
-                            órdenes de trabajo en una sola plataforma, reduciendo errores y mejorando la eficiencia del
-                            negocio.</p>
-                        <p class="mb-0">Nuestro objetivo es que cada mecánico y dueño de taller pueda enfocarse en lo
-                            que sabe hacer,
-                            sin perder tiempo en papeleo o sistemas complicados.</p>
+                </div>
+
+                <!-- Diagrama visual sucursales — visible solo en desktop -->
+                <div class="diagram-wrapper d-none d-lg-block mb-5" aria-hidden="true">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-5">
+                            <div class="diagram-panel">
+                                <div class="diagram-panel-label diagram-label--before">Sin TallerNet</div>
+                                <div class="branch-list">
+                                    <div class="branch-item">
+                                        <span class="branch-dot dot-off">●</span>
+                                        <div class="branch-info">
+                                            <span class="branch-name">Sucursal Centro</span>
+                                            <span class="branch-stock">47 repuestos · aislada</span>
+                                        </div>
+                                    </div>
+                                    <div class="branch-item">
+                                        <span class="branch-dot dot-off">●</span>
+                                        <div class="branch-info">
+                                            <span class="branch-name">Sucursal Norte</span>
+                                            <span class="branch-stock">32 repuestos · aislada</span>
+                                        </div>
+                                    </div>
+                                    <div class="branch-item">
+                                        <span class="branch-dot dot-off">●</span>
+                                        <div class="branch-info">
+                                            <span class="branch-name">Sucursal Sur</span>
+                                            <span class="branch-stock">28 repuestos · aislada</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="diagram-note note-off">Sin visibilidad entre sucursales</p>
+                            </div>
+                        </div>
+                        <div class="col-2 text-center">
+                            <div class="diagram-connector">
+                                <span class="connector-label">TallerNet</span>
+                                <svg width="44" height="16" viewBox="0 0 44 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 8H36M30 2L42 8L30 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="diagram-panel diagram-panel--on">
+                                <div class="diagram-panel-label diagram-label--after">Con TallerNet</div>
+                                <div class="branch-list">
+                                    <div class="branch-item branch-item--on">
+                                        <span class="branch-dot dot-on">●</span>
+                                        <div class="branch-info">
+                                            <span class="branch-name">Sucursal Centro</span>
+                                            <span class="branch-stock">47 repuestos · conectada</span>
+                                        </div>
+                                    </div>
+                                    <div class="branch-item branch-item--on">
+                                        <span class="branch-dot dot-on">●</span>
+                                        <div class="branch-info">
+                                            <span class="branch-name">Sucursal Norte</span>
+                                            <span class="branch-stock">32 repuestos · conectada</span>
+                                        </div>
+                                    </div>
+                                    <div class="branch-item branch-item--on">
+                                        <span class="branch-dot dot-on">●</span>
+                                        <div class="branch-info">
+                                            <span class="branch-name">Sucursal Sur</span>
+                                            <span class="branch-stock">28 repuestos · conectada</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="diagram-note note-on">Stock visible en toda la red</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Texto — visible en todos los tamaños -->
+                <div class="row g-4">
+                    <div class="col-12 col-md-6">
+                        <div class="plat-block plat-block--problem">
+                            <h3 class="plat-title">El desafío actual</h3>
+                            <p>Cada sucursal maneja su stock por separado. Cuando un mecánico necesita un repuesto, no tiene forma de saber si otra sucursal de la misma empresa lo tiene disponible.</p>
+                            <p class="mb-0">El resultado son compras duplicadas, demoras en las reparaciones y una visión fragmentada del inventario total de la organización.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="plat-block plat-block--solution">
+                            <h3 class="plat-title">Cómo lo resuelve TallerNet</h3>
+                            <p>TallerNet centraliza el inventario de todas las sucursales en una sola plataforma. Cada sucursal consulta su propio stock y el de las demás, registra transferencias y mantiene un historial de movimientos.</p>
+                            <p class="mb-0">Una red de talleres deja de funcionar como depósitos aislados y pasa a operar como un sistema de inventario integrado.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-       <section id="servicios">
-            <div class="container py-5">
-                <h2 class="fw-bold mb-4">Servicios</h2>
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-                    <div class="col">
-                        <div class="card h-100 servicio-card">
-                            <div class="card-body">
-                                <h3 class="card-title h5">Gestión de Clientes</h3>
-                                <p class="card-text">Registrá y administrá la información de tus clientes y su historial de visitas al taller.</p>
-                            </div>
-                        </div>
+        <!-- ========== FUNCIONALIDADES ========== -->
+        <section id="funcionalidades">
+            <div class="container-xl">
+                <p class="section-label mb-2">Funcionalidades</p>
+                <div class="row mb-5">
+                    <div class="col-12 col-lg-7">
+                        <h2 class="fw-bold mb-0">Todo lo que tu red de talleres necesita</h2>
                     </div>
-                    <div class="col">
-                        <div class="card h-100 servicio-card">
-                            <div class="card-body">
-                                <h3 class="card-title h5">Control de Vehículos</h3>
-                                <p class="card-text">Asociá cada vehículo a su propietario y llevá un registro completo de intervenciones y reparaciones.</p>
-                            </div>
-                        </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="feature-card">
+                            <span class="feature-num" aria-hidden="true">01</span>
+                            <h4 class="feature-title">Inventario por sucursal</h4>
+                            <p class="feature-desc">Cada sucursal administra su propio stock de repuestos: entradas, salidas y cantidad disponible en tiempo real.</p>
+                        </article>
                     </div>
-                    <div class="col">
-                        <div class="card h-100 servicio-card">
-                            <div class="card-body">
-                                <h3 class="card-title h5">Gestión de Turnos</h3>
-                                <p class="card-text">Organizá la agenda del taller, asignando turnos a mecánicos y evitando superposiciones.</p>
-                            </div>
-                        </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="feature-card">
+                            <span class="feature-num" aria-hidden="true">02</span>
+                            <h4 class="feature-title">Visibilidad entre sucursales</h4>
+                            <p class="feature-desc">Consultá el stock disponible en cualquier sucursal de la red sin llamadas ni planillas externas.</p>
+                        </article>
                     </div>
-                    <div class="col">
-                        <div class="card h-100 servicio-card">
-                            <div class="card-body">
-                                <h3 class="card-title h5">Órdenes de Trabajo</h3>
-                                <p class="card-text">Creá y seguí el estado de cada orde la entrega del vehículo.</p>
-                            </div>
-                        </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="feature-card">
+                            <span class="feature-num" aria-hidden="true">03</span>
+                            <h4 class="feature-title">Transferencias de repuestos</h4>
+                            <p class="feature-desc">Registrá y confirmá el movimiento de repuestos entre sucursales con trazabilidad completa de cada operación.</p>
+                        </article>
                     </div>
-                    <div class="col">
-                        <div class="card h-100 servicio-card">
-                            <div class="card-body">
-                                <h3 class="card-title h5">Presupuestos</h3>
-                                <p class="card-text">Generá presupuestos detallados con repuestos y mano de obra para presentar al cliente.</p>
-                            </div>
-                        </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="feature-card">
+                            <span class="feature-num" aria-hidden="true">04</span>
+                            <h4 class="feature-title">Historial de movimientos</h4>
+                            <p class="feature-desc">Historial completo de transferencias y ajustes de stock para auditoría y control operativo de toda la red.</p>
+                        </article>
                     </div>
-                    <div class="col">
-                        <div class="card h-100 servicio-card">
-                            <div class="card-body">
-                                <h3 class="card-title h5">Historial y Reportes</h3>
-                                <p class="card-text">Accedé al historial completo de repara tomar mejores decisiones.</p>
-                            </div>
-                        </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="feature-card">
+                            <span class="feature-num" aria-hidden="true">05</span>
+                            <h4 class="feature-title">Gestión de repuestos</h4>
+                            <p class="feature-desc">Alta, baja y modificación de repuestos con categorías personalizadas, código de referencia y proveedor asociado.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="feature-card">
+                            <span class="feature-num" aria-hidden="true">06</span>
+                            <h4 class="feature-title">Acceso por sucursal y roles</h4>
+                            <p class="feature-desc">Cada usuario accede al módulo de su sucursal con permisos definidos. La administración central tiene vista consolidada de toda la red.</p>
+                        </article>
                     </div>
                 </div>
             </div>
         </section>
 
-       <section id="contacto">
-            <div class="container py-5">
-                <h2 class="fw-bold mb-2">Contacto</h2>
-                <p class="mb-4" style="color: var(--color-text-muted);">¿Tenés preguntas sobre TallerPro? Completá el formulario y te respondemos a la brevedad.</p>
-                <form action="#" method="post" class="col-12 col-md-8 col-lg-6">
-                    <div class="row g-3 mb-3">
-                        <div class="col-12 col-sm-6">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="tu@email.com" required>
-                        </div>
+        <!-- ========== CONTACTO ========== -->
+        <section id="contacto">
+            <div class="container-xl">
+                <div class="row g-5">
+                    <div class="col-12 col-lg-4">
+                        <p class="section-label mb-2">Contacto</p>
+                        <h2 class="fw-bold mb-3">Hablemos sobre tu red de talleres</h2>
+                        <p class="section-desc mb-4">Completá el formulario y te mostramos cómo TallerNet se adapta a la operación de tu red.</p>
+                        <ul class="contact-highlights list-unstyled">
+                            <li class="highlight-item">
+                                <span class="highlight-check" aria-hidden="true">✓</span>
+                                Inventario centralizado por sucursal
+                            </li>
+                            <li class="highlight-item">
+                                <span class="highlight-check" aria-hidden="true">✓</span>
+                                Transferencias registradas y trazables
+                            </li>
+                            <li class="highlight-item">
+                                <span class="highlight-check" aria-hidden="true">✓</span>
+                                Historial completo de movimientos
+                            </li>
+                            <li class="highlight-item">
+                                <span class="highlight-check" aria-hidden="true">✓</span>
+                                Acceso por sucursal con roles definidos
+                            </li>
+                        </ul>
                     </div>
-                    <div class="mb-3">
-                        <label for="asunto" class="form-label">Asunto</label>
-                        <input type="text" class="form-control" id="asunto" name="asunto" placeholder="¿En qué podemos ayudarte?" required>
+                    <div class="col-12 col-lg-7 offset-lg-1">
+                        <form action="#" method="post">
+                            <div class="row g-3 mb-3">
+                                <div class="col-12 col-sm-6">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre"
+                                        placeholder="Tu nombre" autocomplete="name" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="tu@empresa.com" autocomplete="email" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="empresa" class="form-label">Empresa o taller</label>
+                                <input type="text" class="form-control" id="empresa" name="empresa"
+                                    placeholder="Nombre de tu empresa o taller" autocomplete="organization">
+                            </div>
+                            <div class="mb-4">
+                                <label for="mensaje" class="form-label">Mensaje</label>
+                                <textarea class="form-control" id="mensaje" name="mensaje" rows="4"
+                                    placeholder="Contanos sobre tu red de talleres y qué necesitás." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary fw-semibold px-5">Enviar mensaje</button>
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        <label for="mensaje" class="form-label">Mensaje</label>
-                        <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje acá..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-danger fw-semibold">Enviar mensaje</button>
-                </form>
+                </div>
             </div>
         </section>
 
     </main>
 
-
-    <footer class="py-4">
-        <div class="container text-center">
-            <p class="mb-0 small">© 2026 TallerPro — Todos los derechos reservados.</p>
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container-xl">
+            <div class="footer-top row g-4 pb-4">
+                <div class="col-12 col-lg-4">
+                    <div class="footer-brand d-flex align-items-center gap-2 mb-3">
+                        <span class="brand-mark brand-mark--sm" aria-hidden="true">TN</span>
+                        <span class="footer-brand-name">TallerNet</span>
+                    </div>
+                    <p class="footer-desc">Sistema de gestión de inventario para redes de talleres mecánicos. Centralizá el stock, gestioná transferencias y controlá tu red desde un solo lugar.</p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 offset-lg-1">
+                    <h3 class="footer-heading">Plataforma</h3>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#plataforma">Cómo funciona</a></li>
+                        <li><a href="#funcionalidades">Funcionalidades</a></li>
+                        <li><a href="#contacto">Solicitar demo</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h3 class="footer-heading">Módulos</h3>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#funcionalidades">Inventario</a></li>
+                        <li><a href="#funcionalidades">Sucursales</a></li>
+                        <li><a href="#funcionalidades">Transferencias</a></li>
+                        <li><a href="#funcionalidades">Reportes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-0 small">© 2026 TallerNet — Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
