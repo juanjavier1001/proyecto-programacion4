@@ -794,3 +794,39 @@ footer {
 .footer-bottom {
     padding: 1.25rem 0;
 }
+
+/* === NAVBAR — enlace activo === */
+.navbar-tn .nav-link.active {
+    color: var(--tn-text) !important;
+}
+
+/* === FEATURE CARDS — indicar que son clickeables === */
+.feature-card[data-feature] {
+    cursor: pointer;
+}
+
+/* === MODAL — tema oscuro TallerNet === */
+.modal-tn {
+    background-color: var(--tn-surface);
+    border: 1px solid var(--tn-border-2);
+    color: var(--tn-text);
+}
+
+.modal-tn .modal-header {
+    border-bottom-color: var(--tn-border);
+}
+
+.modal-tn .modal-title {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.modal-tn .modal-body {
+    color: var(--tn-text-muted);
+    line-height: 1.75;
+    font-size: 0.9375rem;
+}
+
+.modal-tn .modal-footer {
+    border-top-color: var(--tn-border);
+}
