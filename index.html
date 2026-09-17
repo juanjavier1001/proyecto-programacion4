@@ -57,9 +57,10 @@
                             <a href="#funcionalidades" class="btn btn-outline-light btn-lg">Ver funcionalidades</a>
                         </div>
                     </div>
-                    <!-- Dashboard mockup — decorativo, oculto en mobile -->
-                    <div class="col-12 col-lg-7 d-none d-lg-block" aria-hidden="true">
-                        <div class="dashboard-mockup" role="presentation">
+                    <!-- Dashboard interactivo — oculto en mobile -->
+                    <div class="col-12 col-lg-7 d-none d-lg-block">
+                        <p class="dashboard-cta-hint">&#x25BA; Demo interactiva &mdash; probá cambiando de sucursal</p>
+                        <div class="dashboard-mockup">
                             <div class="mockup-chrome">
                                 <div class="chrome-dots">
                                     <span class="chrome-dot chrome-dot--red"></span>
@@ -67,63 +68,49 @@
                                     <span class="chrome-dot chrome-dot--green"></span>
                                 </div>
                                 <div class="chrome-url">app.tallernet.io</div>
+                                <span class="mockup-demo-tag" aria-label="Demo interactiva">DEMO</span>
                             </div>
                             <div class="mockup-app">
                                 <aside class="mockup-sidebar">
                                     <div class="mockup-brand-mark">TN</div>
-                                    <div class="mockup-nav active">Inventario</div>
-                                    <div class="mockup-nav">Sucursales</div>
-                                    <div class="mockup-nav">Transferencias</div>
-                                    <div class="mockup-nav">Reportes</div>
-                                    <div class="mockup-nav">Usuarios</div>
+                                    <div class="mockup-nav active" data-vista="inventario">Inventario</div>
+                                    <div class="mockup-nav" data-vista="sucursales">Sucursales</div>
+                                    <div class="mockup-nav" data-vista="transferencias">Transferencias</div>
+                                    <div class="mockup-nav" data-vista="reportes">Reportes</div>
+                                    <div class="mockup-nav" data-vista="usuarios">Usuarios</div>
                                 </aside>
                                 <div class="mockup-main">
                                     <div class="mockup-topbar">
                                         <span class="mockup-page-title">Stock General</span>
-                                        <span class="mockup-branch-badge">Suc. Centro ▾</span>
+                                        <div class="mockup-topbar-controls">
+                                            <span class="mockup-interact-dot" aria-hidden="true"></span>
+                                            <select class="mockup-branch-select" id="selector-sucursal" aria-label="Seleccionar sucursal">
+                                                <option value="centro">Suc. Centro</option>
+                                                <option value="norte">Suc. Norte</option>
+                                                <option value="sur">Suc. Sur</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="mockup-kpis">
                                         <div class="kpi">
-                                            <div class="kpi-val">247</div>
-                                            <div class="kpi-label">Repuestos</div>
+                                            <div class="kpi-val" id="kpi-total">247</div>
+                                            <div class="kpi-label" id="kpi-label-1">Repuestos</div>
                                         </div>
                                         <div class="kpi">
-                                            <div class="kpi-val kpi-val--warn">12</div>
-                                            <div class="kpi-label">Stock bajo</div>
+                                            <div class="kpi-val kpi-val--warn" id="kpi-bajo">12</div>
+                                            <div class="kpi-label" id="kpi-label-2">Stock bajo</div>
                                         </div>
                                         <div class="kpi">
-                                            <div class="kpi-val kpi-val--info">4</div>
-                                            <div class="kpi-label">Transferencias</div>
+                                            <div class="kpi-val kpi-val--info" id="kpi-transferencias">4</div>
+                                            <div class="kpi-label" id="kpi-label-3">Transferencias</div>
                                         </div>
                                     </div>
-                                    <div class="mockup-table-hd">
+                                    <div class="mockup-table-hd" id="mockup-tabla-hd">
                                         <span>Repuesto</span>
                                         <span>Cant.</span>
                                         <span>Estado</span>
                                     </div>
-                                    <div class="mockup-row">
-                                        <span class="row-name">Filtro de aceite Bosch</span>
-                                        <span class="row-qty">42</span>
-                                        <span class="row-status status-ok">OK</span>
-                                    </div>
-                                    <div class="mockup-row">
-                                        <span class="row-name">Pastilla de freno</span>
-                                        <span class="row-qty">3</span>
-                                        <span class="row-status status-low">Bajo</span>
-                                    </div>
-                                    <div class="mockup-row mockup-row--hl">
-                                        <span class="row-name">Bujías NGK</span>
-                                        <span class="row-qty">18</span>
-                                        <span class="row-status status-ok">OK</span>
-                                    </div>
-                                    <div class="mockup-row">
-                                        <span class="row-name">Correa dentada</span>
-                                        <span class="row-qty">0</span>
-                                        <span class="row-status status-out">Sin stock</span>
-                                    </div>
-                                    <div class="mockup-footer">
-                                        <button class="mockup-cta" tabindex="-1">+ Solicitar transferencia</button>
-                                    </div>
+                                    <div id="mockup-tabla"></div>
                                 </div>
                             </div>
                         </div>

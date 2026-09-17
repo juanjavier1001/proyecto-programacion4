@@ -830,3 +830,127 @@ footer {
 .modal-tn .modal-footer {
     border-top-color: var(--tn-border);
 }
+
+/* === DASHBOARD INTERACTIVO — selector de sucursal === */
+.mockup-branch-select {
+    color-scheme: dark;
+    background: var(--tn-surface-2);
+    border: 1px solid var(--tn-border);
+    border-radius: var(--tn-radius-sm);
+    color: var(--tn-text-muted);
+    font-size: 0.62rem;
+    font-family: inherit;
+    padding: 0.15rem 0.4rem;
+    cursor: pointer;
+    outline: none;
+}
+
+/* === DASHBOARD — sidebar clickeable === */
+.mockup-nav[data-vista] {
+    cursor: pointer;
+}
+
+/* === INDICADORES DE INTERACTIVIDAD === */
+
+/* Etiqueta DEMO en la barra chrome */
+.mockup-demo-tag {
+    font-size: 0.48rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--tn-blue);
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 3px;
+    padding: 0.1rem 0.3rem;
+    flex-shrink: 0;
+}
+
+/* Hint encima del mockup */
+.dashboard-cta-hint {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--tn-blue);
+    text-align: right;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+/* Contenedor del dot + selector en el topbar */
+.mockup-topbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Punto parpadeante junto al selector */
+.mockup-interact-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--tn-blue);
+    flex-shrink: 0;
+    animation: parpadeo-dot 1.2s ease-in-out infinite;
+}
+
+@keyframes parpadeo-dot {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.15; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mockup-interact-dot { animation: none; }
+}
+
+/* Selector de sucursal — más visible y claramente interactivo */
+.mockup-branch-select {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #1a3560;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%233b82f6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.35rem center;
+    background-size: 8px 5px;
+    padding-right: 1.4rem;
+    border-color: rgba(59, 130, 246, 0.5);
+    color: var(--tn-text);
+    font-weight: 600;
+}
+
+.mockup-branch-select:hover {
+    background-color: #1f3f6e;
+    border-color: var(--tn-blue);
+}
+
+.mockup-branch-select:focus {
+    background-color: #1f3f6e;
+    border-color: var(--tn-blue);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
+}
+
+/* Cards — "Ver detalle →" siempre visible, estilo link */
+.feature-card::after {
+    content: 'Ver detalle \2192';
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--tn-blue);
+    margin-top: 1rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(59, 130, 246, 0.45);
+    transition: text-decoration-color var(--tn-transition), transform var(--tn-transition);
+}
+
+.feature-card:hover::after {
+    text-decoration-color: var(--tn-blue);
+    transform: translateX(5px);
+}
+
+/* Focus visible en cards para teclado */
+.feature-card:focus-visible {
+    outline: 2px solid var(--tn-blue);
+    outline-offset: 2px;
+}
