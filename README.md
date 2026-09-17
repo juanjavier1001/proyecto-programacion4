@@ -1,45 +1,59 @@
-# TallerPro
+# TallerNet
 
-Sistema de gestión para talleres mecánicos desarrollado como proyecto de la materia Programación 4.
+Sistema de gestión de inventario para redes de talleres mecánicos, desarrollado como proyecto de la materia Programación 4.
 
-Permite administrar clientes, vehículos, turnos y órdenes de trabajo desde una sola plataforma web.
+TallerNet centraliza el stock de repuestos por sucursal, permite consultar disponibilidad en toda la red y registra transferencias entre sucursales.
+
+---
 
 ## Tecnologías
 
 - HTML5
 - CSS3
+- JavaScript (vanilla)
+- Bootstrap 5.3.3
+
+---
 
 ## Estructura del proyecto
 
+```
 proyecto-programacion4/
 ├── index.html       # Página principal
-├── style.css        # Estilos globales
-├── img/             # Imágenes del proyecto
+├── style.css        # Estilos globales con variables CSS
+├── script.js        # JavaScript: interactividad y DOM
 └── README.md
+```
+
+---
 
 ## Secciones
 
-- *Inicio* — hero con descripción general del sistema
-- *Nosotros* — descripción del proyecto y sus objetivos
-- *Servicios* — listado de funcionalidades del sistema
-- *Contacto* — (pendiente de completar)
+- **Inicio** — Hero con dashboard interactivo de demo. Permite cambiar de sucursal y navegar entre vistas (Inventario, Sucursales, Transferencias, Reportes, Usuarios).
+- **Plataforma** — Diagrama comparativo "Sin TallerNet / Con TallerNet" y descripción del problema que resuelve.
+- **Funcionalidades** — 6 cards interactivas. Al hacer click se abre un modal con información ampliada de cada módulo.
+- **Contacto** — Formulario de contacto para solicitar demo.
 
-## SEO
+---
 
-El sitio incluye optimización básica para motores de búsqueda mediante meta tags en `index.html`:
+## Funcionalidades JavaScript
 
-- *Meta description* — resumen del sistema para resultados de búsqueda
-- *Meta keywords* — palabras clave relacionadas (taller mecánico, gestión de taller, turnos, órdenes de trabajo, vehículos, clientes, reparaciones)
-- *Meta author* — autoría del proyecto
-- *Meta robots* — `index, follow` para permitir el rastreo e indexación por buscadores
-- *Título optimizado* — `TallerPro — Sistema de Gestión para Talleres Mecánicos`
+- Navbar activo según sección visible al hacer scroll
+- Cierre automático del menú hamburguesa en mobile al tocar un enlace
+- Dashboard interactivo: selector de sucursal actualiza KPIs y tabla de repuestos en tiempo real
+- Navegación entre vistas del sidebar del dashboard con datos simulados por vista
+- Modal dinámico reutilizable en las cards de funcionalidades: título y contenido cambian según la card seleccionada
+
+---
 
 ## Equipo
 
 - Juan Javier Cordero
 - Lucas Cordero
-- Valdez Leandro
+- Leandro Valdez
+
+---
 
 ## Cómo visualizar el proyecto
 
-Abrí el archivo index.html directamente en el navegador o usá una extensión como *Live Server* en VS Code.
+Abrí `index.html` directamente en el navegador o usá la extensión **Live Server** en VS Code.
